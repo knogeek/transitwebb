@@ -9,16 +9,25 @@
         private $lhonorific;        //Honorific that goes after the name, Ph.D., Esq., etc.
         private $birthdate;         //Birth date of the human in this pattern dd-mmm-yyyy
         private $gender;            //Stated gender. Because trying to pin down the 'correct' gender just makes my hair hurt.
-        //Language and nationality are in the human's account with the site.
+        private $pronounchoice;     //2019, baby.
+
+        //Language and nationality are in the human's user class.
 
         function __construct($human) 
         {
         $this->human;
         }
+
+        function __destruct()
+        {
+            $this=null;
+        }
+
         function getHuman() 
         {
             Return $this->$human;
         }
+
 
         //Functions to make visible properties of a human
         
@@ -27,5 +36,12 @@
         {
         Return $fhonorific . ' ' . $fname . ' ' . $mname . ' ' . $lname . ' ' . $lhonorific;
         } 
+
+        function age()
+        {
+
+            Return date() - $birthdate;
+
+        }
      }
 ?>

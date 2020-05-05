@@ -1,54 +1,58 @@
 class account
             {
                 'Accounts belong to humans who have registered with Transit Webb. Null or empty owner means they need to register'
-                public $owner
-                public $accountname
-                public $pwd
-                public $lastchanged
-                public $age
-                public $challengequestion
-                public $challengeanswer
-                public $billdate
-                public $lastpaid
+                public $owner;
+                public $accountname;
+                public $pwd;
+                public $lastchanged;
+                public $age;
+                public $challengequestion;
+                public $challengeanswer;
+                public $billdate;
+                public $lastpaid;
                 public $balance
             }
         class geoloc
-            {   public $longitude
-                public $latitude
-                public $commonname
-                public $streetaddress
-                public $city
-                public $province
-                public $postalcode
-                public $country
+            {   public $longitude;
+                public $latitude;
+                public $commonname;
+                public $streetaddress;
+                public $city;
+                public $province;
+                public $postalcode;
+                public $country;
             }
         class commethod
             {
-                public $provider
-                public $name
-                public $mstring
-                public $mparams
+                public $provider;
+                public $name;
+                public $mstring;
+                public $mparams;
             }
         class trip
             {
-                public $name
-                public $origin      'geoloc of trip origin'
-                public $destination 'geoloc of trip destination'
-                public $tourguide   'human performing the role of tour guide'
-                public $driver      'human driving the vehicle'
-                public $travelor    'human(s) enjoying the tour. This should be an array of humans on the trip.'
+                public $name;
+                public $origin;      'geoloc of trip origin'
+                public $destination; 'geoloc of trip destination'
+                public $tourguide;   'human performing the role of tour guide'
+                public $driver;      'human driving the vehicle'
+                public $travelor;    'human(s) enjoying the tour. This should be an array of humans on the trip.'
             }
         class leg
             {
                 'Trips have one or more legs. Each leg has one driver and one tour guide. For longer trips the same driver may not work every leg. Ditto tour guides'
-                public $trip
-                public $legno
-                public $origin      'geoloc of trip origin'
-                public $destination 'geoloc of trip destination'
+                public $trip;		 //trip for this leg
+                public $legno;		 //Sequence number of the leg on the trip
+                public $origin;      //geoloc of trip origin
+                public $destination; //geoloc of trip destination
             }
         class vehicle
             {
-                public $mfg
-                public $vin
-                public $model
-                public $yearmfg
+                public $mfg;
+                public $vin;
+                public $model;
+                public $yearmfg;
+				public $licenseplate;
+				public $lastinspected;
+				public $acquired;
+				public $depreciationyears; /*Single precision decimal indicating how long the vehicle will be depreciated to zero*/
